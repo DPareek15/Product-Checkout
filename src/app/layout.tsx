@@ -17,7 +17,6 @@ export default function RootLayout({
       <body
         className={`p-0 m-0 flex flex-col items-center justify-center gap-0 antialiased`}
       >
-        <Header />
         {children}
       </body>
     </html>

@@ -1,6 +1,6 @@
-import { IconShoppingCart } from '@tabler/icons-react';
+import { IconHome, IconShoppingCart } from '@tabler/icons-react';
 
-const Header = () => {
+const Header = ({ hasCartButton }: { hasCartButton: boolean }) => {
   return (
     <div className="h-[4rem] w-screen flex flex-row items-center justify-between px-8 py-12 shadow-md">
       <div className="m-2">
@@ -11,7 +11,11 @@ const Header = () => {
           type="button"
           className="h-16 w-16 flex items-center justify-center hover:border-2 hover:border-gray-600 hover:border-solid hover:shadow-lg rounded-lg"
         >
-          <IconShoppingCart size={40} stroke={1.5} color="#171717" />
+          {hasCartButton ? (
+            <IconShoppingCart size={40} stroke={1.5} color="#171717" />
+          ) : (
+            <IconHome size={40} stroke={1.5} color="#171717" />
+          )}
         </button>
       </div>
     </div>

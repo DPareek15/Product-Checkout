@@ -17,7 +17,7 @@ const ProductCard = ({ product, onCopyId }: ProductCardProps) => {
             <span className="text-red-600"> (Out of stock)</span>
           )}
         </p>
-        <p>{product.price}</p>
+        <p>{`Rs. ${product.price.toFixed(2)}`}</p>
         <button
           type="button"
           title="Click to copy ID"
