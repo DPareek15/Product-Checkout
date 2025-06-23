@@ -2,9 +2,10 @@
 
 import CartList from '@/components/CartList';
 import Header from '@/components/Header';
-import { getCart, updateCart } from '@/data/cart';
+import { clearCart, getCart, updateCart } from '@/data/cart';
 import { IconArrowRight, IconTrash } from '@tabler/icons-react';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 import { useState } from 'react';
 
 export default function Cart() {
@@ -36,8 +37,10 @@ export default function Cart() {
                   type="button"
                   className="h-12 w-12 flex items-center justify-center hover:shadow-xl"
                   onClick={() => {
-                    confirm('Are you sure you want to clear the cart?') &&
+                    if (confirm('Are you sure you want to clear the cart?')) {
+                      clearCart();
                       setCart([]);
+                    }
                   }}
                 >
                   <IconTrash size={24} stroke={1.5} color="#171717" />
@@ -45,7 +48,10 @@ export default function Cart() {
                 <button
                   type="button"
                   className="h-12 w-12 flex items-center justify-center hover:shadow-xl"
-                  onClick={() => updateCart(cart)}
+                  onClick={() => {
+                    updateCart(cart);
+                    cart.length > 0 && redirect('/checkout');
+                  }}
                 >
                   <IconArrowRight size={24} stroke={1.5} color="#171717" />
                 </button>

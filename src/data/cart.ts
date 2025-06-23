@@ -1,3 +1,5 @@
+'use client';
+
 import { Order } from './products';
 
 const localStorage = window.localStorage;
@@ -10,6 +12,8 @@ export const createCart = () => {
 export const updateCart = (cart: Order[]) => {
   localStorage.setItem('cart', JSON.stringify(cart));
 };
+
+export const clearCart = () => localStorage.setItem('cart', JSON.stringify([]));
 
 export const setItem = ({ order }: { order: Order }) => {
   createCart();
