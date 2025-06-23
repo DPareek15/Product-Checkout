@@ -1,4 +1,5 @@
 import { IconHome, IconShoppingCart } from '@tabler/icons-react';
+import Link from 'next/link';
 
 const Header = ({ hasCartButton }: { hasCartButton: boolean }) => {
   return (
@@ -12,9 +13,13 @@ const Header = ({ hasCartButton }: { hasCartButton: boolean }) => {
           className="h-16 w-16 flex items-center justify-center hover:border-2 hover:border-gray-600 hover:border-solid hover:shadow-lg rounded-lg"
         >
           {hasCartButton ? (
-            <IconShoppingCart size={40} stroke={1.5} color="#171717" />
+            <Link href={'/cart'}>
+              <IconShoppingCart size={40} stroke={1.5} color="#171717" />
+            </Link>
           ) : (
-            <IconHome size={40} stroke={1.5} color="#171717" />
+            <Link href={'/home'}>
+              <IconHome size={40} stroke={1.5} color="#171717" />
+            </Link>
           )}
         </button>
       </div>

@@ -1,10 +1,11 @@
 'use client';
 
 import ProductArea from '@/components/ProductArea';
-import { productIdSet } from '@/data/products';
+import { Order, productData, productIdSet } from '@/data/products';
 import { useRef, useState } from 'react';
 import { IconPlus } from '@tabler/icons-react';
 import Header from '@/components/Header';
+import { setItem } from '@/data/cart';
 
 export default function Home() {
   const [currentId, setCurrentId] = useState('');
@@ -39,7 +40,14 @@ export default function Home() {
                 currentId.trim().length !== 6 ||
                 !productIdSet.has(currentId.trim())
               }
-              onClick={() => alert(currentId)}
+              onClick={() => {
+                const product = productData.find(
+                  (p) => p.productId === currentId
+                );
+                const order: Order = { ...product!, quantity: 1 };
+                setItem({ order });
+                setCurrentId('');
+              }}
             >
               <IconPlus size={32} stroke={2} />
             </button>

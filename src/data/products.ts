@@ -6,6 +6,8 @@ export type Product = {
   stock: number;
 };
 
+export type Order = Product & { quantity: number };
+
 export const productData = [
   {
     productId: '103615',
@@ -216,6 +218,49 @@ export const productData = [
     price: 5499.0,
     image: '/mem.jpg',
     stock: 1000,
+  },
+];
+
+export const productCart = [
+  {
+    productId: '894115',
+    name: 'Portable USB Fan',
+    price: 299.0,
+    image: '/mem.jpg',
+    stock: 1000,
+    quantity: 3,
+  },
+  {
+    productId: '894310',
+    name: 'Plastic Storage Boxes (Set of 4)',
+    price: 999.0,
+    image: '/mem.jpg',
+    stock: 1000,
+    quantity: 1,
+  },
+  {
+    productId: '615105',
+    name: 'Digital Kitchen Weighing Scale',
+    price: 599.0,
+    image: '/mem.jpg',
+    stock: 1000,
+    quantity: 1,
+  },
+  {
+    productId: '784202',
+    name: 'Stapler Machine with Pins',
+    price: 199.0,
+    image: '/mem.jpg',
+    stock: 1000,
+    quantity: 2,
+  },
+  {
+    productId: '452946',
+    name: 'Ceiling Fan - Energy Efficient',
+    price: 2499.0,
+    image: '/mem.jpg',
+    stock: 1000,
+    quantity: 1,
   },
 ];
 
