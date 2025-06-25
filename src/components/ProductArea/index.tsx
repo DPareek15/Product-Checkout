@@ -13,9 +13,9 @@ const ProductCard = ({ product, onCopyId }: ProductCardProps) => {
         <Image
           src={product.image}
           width={400}
-          height={240}
+          height={300}
           alt={product.name}
-          className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-48 sm:h-56 group-hover:scale-105 transition-transform duration-300"
         />
         {product.stock === 0 && (
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
