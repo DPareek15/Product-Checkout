@@ -3,27 +3,39 @@ import Link from 'next/link';
 
 const Header = ({ hasCartButton }: { hasCartButton: boolean }) => {
   return (
-    <div className="h-[4rem] w-screen flex flex-row items-center justify-between px-8 py-12 shadow-md">
-      <div className="m-2">
-        <h1 className="text-5xl">Product Checkout</h1>
-      </div>
-      <div className="mx-8 my-16">
-        <button
-          type="button"
-          className="h-16 w-16 flex items-center justify-center hover:border-2 hover:border-gray-600 hover:border-solid hover:shadow-lg rounded-lg"
-        >
-          {hasCartButton ? (
-            <Link href={'/cart'}>
-              <IconShoppingCart size={40} stroke={1.5} color="#171717" />
+    <header className="w-screen bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-20 w-full">
+          <div className="flex-shrink-0">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
+              Product Checkout
+            </h1>
+          </div>
+
+          <nav className="flex-shrink-0">
+            <Link href={hasCartButton ? '/cart' : '/home'}>
+              <button
+                type="button"
+                className="h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center bg-gray-50 hover:bg-gray-100 border border-gray-200 hover:border-gray-300 rounded-xl transition-all duration-200 hover:shadow-md group"
+                title={hasCartButton ? 'Go to Cart' : 'Go to Home'}
+              >
+                {hasCartButton ? (
+                  <IconShoppingCart
+                    size={24}
+                    className="text-gray-600 group-hover:text-gray-900 transition-colors duration-200"
+                  />
+                ) : (
+                  <IconHome
+                    size={24}
+                    className="text-gray-600 group-hover:text-gray-900 transition-colors duration-200"
+                  />
+                )}
+              </button>
             </Link>
-          ) : (
-            <Link href={'/home'}>
-              <IconHome size={40} stroke={1.5} color="#171717" />
-            </Link>
-          )}
-        </button>
+          </nav>
+        </div>
       </div>
-    </div>
+    </header>
   );
 };
 
