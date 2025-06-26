@@ -2,7 +2,6 @@
 
 import { IconMinus, IconPlus, IconX } from '@tabler/icons-react';
 import Image from 'next/image';
-import { Order } from '@/data/products';
 import React from 'react';
 
 const OrderList = ({
@@ -65,7 +64,7 @@ const OrderList = ({
               className="w-10 sm:w-12 h-8 text-center text-sm font-medium bg-transparent border-none outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               value={order.quantity}
               min={0}
-              max={Math.min(order.stock, 999)}
+              max={Math.min(order.stock, 99)}
               readOnly
             />
 
@@ -73,7 +72,7 @@ const OrderList = ({
               type="button"
               className="h-8 w-8 flex items-center justify-center bg-white border border-gray-300 rounded-full hover:bg-gray-50 hover:border-gray-400 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               onClick={() => {
-                if (order.quantity < Math.min(order.stock, 999)) {
+                if (order.quantity < Math.min(order.stock, 99)) {
                   const newOrder: Order = {
                     ...order,
                     quantity: order.quantity + 1,

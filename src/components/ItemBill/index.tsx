@@ -1,5 +1,3 @@
-import { Order } from '@/data/products';
-
 const Bill = ({ order }: { order: Order }) => {
   return (
     <div className="w-full py-3 px-4 hover:bg-gray-50 rounded-lg transition-colors duration-200">

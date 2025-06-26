@@ -1,7 +1,7 @@
 'use client';
 
 import ProductArea from '@/components/ProductArea';
-import { Order, productData, productIdSet } from '@/data/products';
+import { productData, productIdSet } from '@/data/products';
 import { useRef, useState } from 'react';
 import { IconPlus, IconCheck } from '@tabler/icons-react';
 import Header from '@/components/Header';

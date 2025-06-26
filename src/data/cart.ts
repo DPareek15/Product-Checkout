@@ -1,7 +1,5 @@
 'use client';
 
-import { Order } from './products';
-
 const localStorage = window.localStorage;
 
 export const createCart = () => {

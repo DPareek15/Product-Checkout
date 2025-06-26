@@ -1,14 +1,4 @@
-export type Product = {
-  productId: string;
-  name: string;
-  price: number;
-  image: string;
-  stock: number;
-};
-
-export type Order = Product & { quantity: number };
-
-export const productData = [
+export const productData: Product[] = [
   {
     productId: '103615',
     name: 'Wireless Bluetooth Earbuds',

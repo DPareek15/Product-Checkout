@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Simple Product Checkout Web Application
 
-## Getting Started
+## Description
 
-First, run the development server:
+A modern, responsive web application that allows users to browse products, add them to a shopping cart using Product IDs, and perform a simple checkout operation. The application features a clean, intuitive interface with enhanced user experience features while maintaining focus on core functionality.
+
+### Key Features
+
+- **Product Browsing**: View a predefined catalog of products with details including ID, name, image, and price
+- **Cart Management**: Add products using Product ID input or convenient click-to-add functionality
+- **Quantity Control**: Update product quantities directly in the cart (Bonus Feature)
+- **Product Removal**: Remove individual products or clear the entire cart (Bonus Feature)
+- **Checkout Simulation**: Calculate and display total amount without actual payment processing
+- **Responsive Design**: Works seamlessly across desktop and mobile devices
+- **Persistent Cart**: Cart data persists across browser sessions using Web Storage API
+
+## Tech Stack
+
+- **Next.js 15** - React framework for production-ready applications with file-based routing; chosen for its excellent developer experience, built-in routing, and optimization features
+- **TypeScript** - Type-safe JavaScript for better development experience and code reliability; provides static type checking, improving code quality and reducing runtime errors
+- **Tailwind CSS** - Utility-first CSS framework for rapid UI development, enables rapid prototyping and consistent design system
+- **Tabler Icons** - Beautiful, customizable and comprehensive set of clean, modern icons that enhance the user interface
+
+### Why These Libraries?
+
+- **Performance**: Next.js offers automatic code splitting and optimization
+- **Developer Experience**: TypeScript with Next.js provides excellent IntelliSense and error detection
+- **Maintainability**: Tailwind's utility classes make styling predictable and easy to modify
+- **Accessibility**: All chosen libraries follow modern web standards and accessibility guidelines
+
+## How to Run the Application Locally
+
+### Prerequisites
+
+- Node.js (version 16.0 or higher)
+- npm or yarn package manager
+
+### Installation Steps
+
+1. **Clone the repository**
+
+```bash
+git clone <repository-url>
+cd simple-product-checkout
+```
+
+2. **Install the dependencies**
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. **Run the development server**
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. **Open the application**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Navigate to ```http://localhost:3000``` in your web browser
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Application Structure
 
-## Learn More
+├── pages/  
+│   ├── index.tsx          # Home page - Product catalog and adding to cart  
+│   ├── cart.tsx           # Cart page - Cart management and editing  
+│   └── checkout.tsx       # Checkout page - Order summary and payment simulation  
+├── components/            # Reusable UI components  
+├── data/                  # Product details and data  
+├── types/                 # TypeScript type definitions  
 
-To learn more about Next.js, take a look at the following resources:
+## Assumptions made
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Product Catalog:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- A predefined set of products is hard-coded in the application
+- Product IDs are six-digit numeric strings
+- Product prices are in Rupees per unit
 
-## Deploy on Vercel
+2. **Cart Functionality:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Cart data persists in the browser's local storage
+- Maximum quantity per product is limited to 99 units
+- Cart is specific to the browser session and device
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **User Interface:**
+
+- Modern browsers with JavaScript enabled are assumed
+- Mobile-first responsive design approach which work on all devices
+- No user authentication or multi-user support is implemented
+
+4. **Payment Simulation:**
+
+- No real payment processing or validation
+- Tax calculations and shipping costs are not included
+- Order confirmation is simulated without backend integration
+
+5. **Data Management:**
+
+- All data is maintained in memory and browser storage during the session
+- No database integration as per requirements
+
+6. **Browser Compatibility:**
+
+- Modern browsers that support ES6+ features
+- Web Storage API support is assumed to be available
+
+## Future Enhancements
+
+- User authentication and account management
+- Real payment gateway integration
+- Product search and filtering capabilities
+- Database integration for persistent data storage
+
+## License
+
+This project is created as an assignment and is for educational purposes only.
